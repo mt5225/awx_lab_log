@@ -1,0 +1,8 @@
+---
+- name: list files
+  hosts: all
+ 
+  tasks:
+ 
+  - name: list files in tmp folder
+    shell: ls -la /tmp
