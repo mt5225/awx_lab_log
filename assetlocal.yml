@@ -16,6 +16,6 @@
       
   - name: fetch to awx server
     fetch:
-      src: "{{ output_xml }}"
+      src: "{{ output_xml.stdout }}"
       dest: /tmp/fetched
  
