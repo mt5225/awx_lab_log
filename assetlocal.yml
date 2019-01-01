@@ -15,7 +15,7 @@
       var: output_xml
       
   - name: fetch to awx server
-    - fetch:
+    fetch:
       src: {{ output_xml }}
       dest: /tmp/fetched
  
