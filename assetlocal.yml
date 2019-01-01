@@ -1,2 +1,8 @@
+---
 - name: Run a script locally
-  script: /tmp/audit_linux.sh 
+  hosts: all
+ 
+  tasks:
+ 
+  - name: run a script locally
+    script: /tmp/audit_linux.sh
