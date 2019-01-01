@@ -1,0 +1,2 @@
+- name: Run a script locally
+  script: /tmp/audit_linux.sh 
