@@ -6,3 +6,11 @@
  
   - name: run a script locally
     script: /tmp/audit_linux.sh
+  
+  - name: get generated xml file
+    shell: ls -t `hostname`*.xml | head -1
+    register: output_xml
+    
+  - debug:
+      var: output_xml
+ 
