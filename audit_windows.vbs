@@ -1,36 +1,3 @@
-'  Copyright 2003-2015 Opmantek Limited (www.opmantek.com)
-'
-'  ALL CODE MODIFICATIONS MUST BE SENT TO CODE@OPMANTEK.COM
-'
-'  This file is part of Open-AudIT.
-'
-'  Open-AudIT is free software: you can redistribute it and/or modify
-'  it under the terms of the GNU Affero General Public License as published
-'  by the Free Software Foundation, either version 3 of the License, or
-'  (at your option) any later version.
-'
-'  Open-AudIT is distributed in the hope that it will be useful,
-'  but WITHOUT ANY WARRANTY; without even the implied warranty of
-'  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-'  GNU Affero General Public License for more details.
-'
-'  You should have received a copy of the GNU Affero General Public License
-'  along with Open-AudIT (most likely in a file named LICENSE).
-'  If not, see <http://www.gnu.org/licenses/>
-'
-'  For further information on Open-AudIT or for a license other than AGPL please see
-'  www.opmantek.com or email contact@opmantek.com
-'
-' *****************************************************************************
-
-' @package Open-AudIT
-' @author Mark Unwin <marku@opmantek.com> and others
-' 
-' @version   2.2.7
-
-' @copyright Copyright (c) 2014, Opmantek
-' @license http://www.gnu.org/licenses/agpl-3.0.html aGPL v3
-
 forceCScriptExecution
 
 start_time = Timer
@@ -6926,7 +6893,7 @@ end function
 
 function WMIOSLanguage(lang)
     if lang = "1" then WMIOSLanguage = "Arabic" end if
-    if lang = "4" then WMIOSLanguage = "Chinese (Simplified)– China" end if
+    if lang = "4" then WMIOSLanguage = "Chinese (Simplified)Â– China" end if
     if lang = "9" then WMIOSLanguage = "English" end if
     if lang = "1025" then WMIOSLanguage = "Arabic - Saudi Arabia" end if
     if lang = "1026" then WMIOSLanguage = "Bulgarian" end if
@@ -6934,7 +6901,7 @@ function WMIOSLanguage(lang)
     if lang = "1028" then WMIOSLanguage = "Chinese (Traditional) - Taiwan" end if
     if lang = "1029" then WMIOSLanguage = "Czech" end if
     if lang = "1030" then WMIOSLanguage = "Danish" end if
-    if lang = "1031" then WMIOSLanguage = "German – Germany" end if
+    if lang = "1031" then WMIOSLanguage = "German Â– Germany" end if
     if lang = "1032" then WMIOSLanguage = "Greek" end if
     if lang = "1033" then WMIOSLanguage = "English - United States" end if
     if lang = "1034" then WMIOSLanguage = "Spanish - Traditional Sort" end if
@@ -6985,7 +6952,7 @@ function WMIOSLanguage(lang)
     if lang = "1085" then WMIOSLanguage = "Yiddish" end if
     if lang = "1086" then WMIOSLanguage = "Malay - Malaysia" end if
     if lang = "2049" then WMIOSLanguage = "Arabic - Iraq" end if
-    if lang = "2052" then WMIOSLanguage = "Chinese (Simplified) – PRC" end if
+    if lang = "2052" then WMIOSLanguage = "Chinese (Simplified) Â– PRC" end if
     if lang = "2055" then WMIOSLanguage = "German - Switzerland" end if
     if lang = "2057" then WMIOSLanguage = "English - United Kingdom" end if
     if lang = "2058" then WMIOSLanguage = "Spanish - Mexico" end if
