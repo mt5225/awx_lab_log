@@ -1,5 +1,5 @@
 '''
-curl -X POST -H 'Content-type: text/xml' -d @req.xml http:/localhost:7800
+curl -X POST -H 'Content-type: text/xml' -d @req.xml http://localhost:7800
 '''
 import time
 from watchdog.observers import Observer

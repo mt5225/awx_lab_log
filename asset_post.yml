@@ -1,0 +1,24 @@
+---
+- name: Run a script locally
+  hosts: all
+ 
+  tasks:
+  - name: run a script locally
+    script: /tmp/audit_linux.sh
+  
+  - name: get generated xml file
+    shell: ls -t `hostname -s`*.xml | head -1
+    register: output_xml
+    
+  - debug:
+      var: output_xml
+      
+  - name: fetch to awx server
+    fetch:
+      src: "{{ output_xml.stdout }}"
+      dest: /tmp/fetched
+  
+  - name: post to dix server
+    local_action: command curl -X POST -d @/tmp/fetched/{{ inventory_hostname }}/{{ output_xml.stdout }} http://localhost:7800
+    args:
+      warn: false

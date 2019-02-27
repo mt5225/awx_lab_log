@@ -3,7 +3,7 @@
 Very simple HTTP server in python.
 
 Usage::
-    ./dummy-web-server.py [<port>]
+    ./dummy_http_srv.py [<port>]
 
 Send a GET request::
     curl http://localhost
