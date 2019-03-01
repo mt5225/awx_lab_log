@@ -9,10 +9,10 @@ start_time = Timer
 strcomputer = "."
 
 ' submit the audit to the Open-AudIT server
-submit_online = "y"
+submit_online = "n"
 
 ' create an XML text file of the result in the current directory
-create_file = "n"
+create_file = "y"
 
 discovery_id = ""
 
