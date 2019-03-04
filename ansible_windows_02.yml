@@ -1,0 +1,45 @@
+---
+- name: Run a script locally
+  hosts: windows
+
+  tasks:
+  - name: copy audit_windows.vbs to remote server
+    win_copy:
+      src: /tmp/audit_windows.vbs
+      dest: C:\temp\
+      remote_src: no
+
+  - name: run audit_windows.vbs to get information
+    win_command: cscript.exe C:\temp\audit_windows.vbs
+    args:
+      chdir: C:\temp\
+
+  - name: copy utf8_no_bom_encoding.ps1 to remote server
+    win_copy:
+      src: /tmp/utf8_no_bom_encoding.ps1
+      dest: C:\temp\
+      remote_src: no
+
+  - name: run utf8_no_bom_encoding.ps1 to transform file format
+    win_command: powershell.exe C:\temp\utf8_no_bom_encoding.ps1
+    args:
+      chdir: C:\temp\
+
+  - name: get generated xml file
+    win_shell: ls -name ${hostname}*.xml | Sort-Object -Descending | Select-Object -First 1
+    args:
+      chdir: C:\temp\
+    register: output_xml
+
+  - debug:
+      var: output_xml
+
+  - name: fetch to awx server
+    fetch:
+      src: C:\temp\{{ output_xml.stdout_lines[0] }}
+      dest: /tmp/fetched
+
+  - name: post to dix server
+    local_action: command curl -X POST -d @/tmp/fetched/{{ inventory_hostname }}/C\:/temp/{{ output_xml.stdout_lines[0] }} http://192.168.21.60:20000/http/rest/pushCi
+    args:
+      warn: false
